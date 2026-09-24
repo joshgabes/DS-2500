@@ -53,10 +53,7 @@ while i < len(value) and value[i] % 2 != 0:
 print(limited_sum)
 
 # PROBLEM 04
-
-
-### SETUP BEGINS -- DO NOT MODIFY
-course_description = "Offers intermediate to advanced Python programming for data
+course_description = """Offers intermediate to advanced Python programming for data
 science. Covers object oriented design patterns using Python, including
 encapsulation, composition, and inheritance. Advanced programming skills cover
 software architecture, recursion, profiling, unit testing and debugging, lineage
@@ -67,5 +64,21 @@ data visualization; and natural language processing. Additional assigned reading
 survey topics in Ethics, Model Bias, and Data Privacy pertinent to todays Big Data
 world. Offers students an opportunity to prepare for more advanced courses in data
 science and to enable practical contributions to software development and data
-science projects in a commercial setting. "
-### SETUP ENDS -- DO NOT MODIF
+science projects in a commercial setting. """
+
+course_description = course_description.lower()
+punctuation = ".,?!;:''""–—()[]{}.../@#$%^&*+=_`~|<>"
+
+for char in punctuation:
+    course_description = course_description.replace(char, "")
+
+words = course_description.split(" ")
+
+word2count = {}
+for word in words:
+     if word != "":
+        if word in word2count:
+            word2count[word] += 1
+        else:
+            word2count[word] = 1
+print (word2count)
