@@ -25,7 +25,7 @@ for letter in fruits[0]:
     for fruit in fruits:
         if letter not in fruit:
             shared = False
-        if shared and letter not in common_letters:
+    if shared and letter not in common_letters:
             common_letters.append(letter)
 
 # PROBLEM 03
