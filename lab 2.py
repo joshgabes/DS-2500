@@ -21,8 +21,29 @@ for letter in fruits[0]:
         if shared and letter not in common_letters:
             common_letters.append(letter)
 
-# PROBLEM 03
+# PROBLEM 
 
+#Part one
+values = [6, 7, 8, 9, 10]
+total_sum = 0
+i = 0
+
+while total_sum < 2500 and i < len(values):
+    total_sum += values[i]
+    i += 1
+
+print(total_sum)
+
+#Part two
+value = [1, 2, 3, 4, 5, 6]
+limited_sum = 0
+i = 0
+
+while i < len(value) and value[i] % 2 != 0:
+    limited_sum += value[i]
+    i += 1
+    
+print(limited_sum)
 
 # PROBLEM 04
 
