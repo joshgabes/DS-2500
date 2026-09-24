@@ -67,7 +67,7 @@ science and to enable practical contributions to software development and data
 science projects in a commercial setting. """
 
 course_description = course_description.lower()
-punctuation = ".,?!;:''""–—()[]{}.../@#$%^&*+=_`~|<>"
+punctuation = ".,?!;:''–—()[]{}.../@#$%^&*+=_`~|<>"
 
 for char in punctuation:
     course_description = course_description.replace(char, "")
