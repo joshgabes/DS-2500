@@ -4,7 +4,22 @@
 
 
 # PROBLEM 02
+fruits = ["apple", "pear", "grapes", "peach"]
+letter2fruits = {}
+for fruit in fruits:
+    first_letter = fruit[0]
+    if first_letter not in letter2fruits:
+        letter2fruits[first_letter]= []
+    letter2fruits[first_letter].append(fruit)
 
+common_letters = []
+for letter in fruits[0]:
+    shared = True
+    for fruit in fruits:
+        if letter not in fruit:
+            shared = False
+        if shared and letter not in common_letters:
+            common_letters.append(letter)
 
 # PROBLEM 03
 
