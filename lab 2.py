@@ -72,7 +72,7 @@ punctuation = ".,?!;:''""–—()[]{}.../@#$%^&*+=_`~|<>"
 for char in punctuation:
     course_description = course_description.replace(char, "")
 
-words = course_description.split(" ")
+words = course_description.split()
 
 word2count = {}
 for word in words:
