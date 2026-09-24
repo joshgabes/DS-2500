@@ -2,6 +2,13 @@
 
 # PROBLEM 01
 
+sum_1_1000 = 0
+for n in range(1, 1001):
+    sum_1_1000 += n
+    
+sum_odd_1_2501 = 0 
+for n in range(1, 2502, 2):
+        sum_odd_1_2501 += n
 
 # PROBLEM 02
 fruits = ["apple", "pear", "grapes", "peach"]
