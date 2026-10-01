@@ -71,4 +71,4 @@ def main():
     print(function_p6(pairs))
     
 if __name__ == "__main__":
-main()
+    main()
