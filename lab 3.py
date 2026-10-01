@@ -52,12 +52,16 @@ def function_p4(pairs):
 print(function_p4(pairs))
 
 # PROBLEM 05
-def function_p5():
-pass # TODO implement
+def function_p5(tuples):
+    """Return the tuples sorted ascending by their second element."""
+    return sorted(tuples, key=lambda t: t[1])
+
 
 # PROBLEM 06
-def function_p6():
-pass # TODO implement
+def function_p6(tuples):
+    """Return the tuples sorted descending by their sum."""
+    return sorted(tuples, key=lambda t: sum(t), reverse=True)
+
 def main():
 pass
 if __name__ == "__main__":
