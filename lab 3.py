@@ -10,12 +10,32 @@ employees = [
 pairs = [(5, 2), (1, 4), (3, 1), (2, 9)]
 # SET UP ENDS - Do Not Modify
 # PROBLEM 01
-def count_ints():
-pass # TODO implement
+def count_ints(lst, num):
+    """"
+    takes a list of integers and an number num 
+    and returns the number of times the number appears in list. 
+    """
+    
+    count = 0
+
+    for row in lst:
+        for value in row:
+            if value == num:
+                count += 1
+    return count
 
 # PROBLEM 02
-def remove_duplicates():
-pass # TODO implement
+def remove_duplicates(lst):
+    """
+    returns a new list with duplicate values removed
+    """
+    new_list = []
+
+    for value in lst:
+        if value not in new_list:
+            new_list.append(value)
+
+    return new_list
 
 # PROBLEM 03
 def filter_employees(employee_list):
