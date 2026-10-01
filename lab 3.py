@@ -63,6 +63,12 @@ def function_p6(tuples):
     return sorted(tuples, key=lambda t: sum(t), reverse=True)
 
 def main():
-pass
+    print(count_ints([[-1, -2, -3], [-1, 5, 6]], -1))
+    print(remove_duplicates([3, 1, 2, 3, 2]))
+    print(filter_employees(employees))
+    print(function_p4(pairs))
+    print(function_p5(pairs))
+    print(function_p6(pairs))
+    
 if __name__ == "__main__":
 main()
