@@ -47,10 +47,7 @@ def filter_employees(employee_list):
 
 # PROBLEM 04
 def function_p4(pairs):
-    """
-    Take a list of tuples of two numbers and return a list of tuples
-    containing the original two numbers and their product.
-    """
+    """Take a list of tuples of two numbers and return a list of tuplescontaining the original two numbers and their product."""
     return [(a, b, a * b) for a, b in pairs]
 print(function_p4(pairs))
 
