@@ -18,8 +18,12 @@ def remove_duplicates():
 pass # TODO implement
 
 # PROBLEM 03
-def filter_employees():
-pass # TODO implement
+def filter_employees(employee_list):
+    """Returns the names of Engineering employees with more than 3 years of experience."""
+    return [employee["name"]
+            for employee in employee_list
+            if employee["department"] == "Engineering"
+            and employee["years_experience"] > 3]
 
 # PROBLEM 04
 def function_p4():
