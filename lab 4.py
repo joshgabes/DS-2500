@@ -61,7 +61,7 @@ print(movie.is_highly_rated())  # True
 # PROBLEM 02
 def create_movie_objects(movie_data):
     """this function takes a list of lists and returns a list of movie objects"""
-    movies= []
+    movies = []
 
     for movie in movie_data:
 
