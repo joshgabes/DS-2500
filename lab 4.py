@@ -57,7 +57,13 @@ def create_movie_objects(movie_data):
     return movies
 
 # PROBLEM 03
-
+def get_top_rated_movies(movies, n):
+    """Return the top n movie titles by rating or allif fewer than n exist."""
+    sorted_movies = sorted(movies, key=lambda movie: movie.rating, reverse=True)
+    titles = []
+    for movie in sorted_movies[:n]:
+        titles.append(movie.title)
+    return titles
 
 # PROBLEM 04
 
