@@ -43,7 +43,20 @@ class Movie:
         is_highly_rated(): Returns True if the movie's rating is 8.0 or above,
             False otherwise.
     """
-    pass #TODO implement
+def __init__(self, title, year, rating, genre, box_office):
+    self.title = title
+    self.year = year
+    self.rating = rating
+    self.genre = genre
+    self.box_office = box_office
+
+def is_highly_rated(self):
+    return self.rating >= 8.0
+
+movie = Movie("Inception", 2010, 8.8, "Sci-Fi", 829.9)
+print(movie.title)              # Inception
+print(movie.is_highly_rated())  # True
+
 
 # PROBLEM 02
 def create_movie_objects(movie_data):
