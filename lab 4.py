@@ -56,12 +56,6 @@ def create_movie_objects(movie_data):
 
     return movies
 
-movies = create_movie_objects(movie_data)
-
-print(movies[5].title)
-print(movies[3].title)
-print(movies[0].title)
-
 # PROBLEM 03
 
 
