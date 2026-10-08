@@ -65,7 +65,6 @@ def create_movie_objects(movie_data):
     movies = []
 
     for movie in movie_data:
-
         movies.append(Movie(*movie))
 
     return movies
