@@ -67,6 +67,39 @@ print(movies[0].title)
 
 # PROBLEM 04
 
+def analyze_genre(movies, genre):
+    """
+    Summarizes the movies in a given genre.
+
+    Args:
+        movies (list): A list of Movie objects.
+        genre (str): The genre to analyze.
+
+    Returns:
+        dict: A dictionary with the keys "count" (number of movies in the
+            genre), "avg_rating" (average rating, rounded to 2 decimal
+            places), "total_box_office" (total box office revenue, rounded
+            to 2 decimal places), and "highly_rated_count" (number of
+            highly rated movies in the genre). All values are 0 if no
+            movies match the genre.
+    """
+    genre_movies = [movie for movie in movies if movie.genre == genre]
+
+    if not genre_movies:
+        return {"count": 0, "avg_rating": 0, "total_box_office": 0,
+                "highly_rated_count": 0}
+
+    count = len(genre_movies)
+    total_rating = sum(movie.rating for movie in genre_movies)
+    total_box_office = sum(movie.box_office for movie in genre_movies)
+    highly_rated_count = sum(1 for movie in genre_movies
+                             if movie.is_highly_rated())
+
+    return {"count": count,
+            "avg_rating": round(total_rating / count, 2),
+            "total_box_office": round(total_box_office, 2),
+            "highly_rated_count": highly_rated_count}
+
 
 def main():
     pass
