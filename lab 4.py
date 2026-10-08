@@ -46,7 +46,21 @@ class Movie:
     pass #TODO implement
 
 # PROBLEM 02
+def create_movie_objects(movie_data):
+    """this function takes a list of lists and returns a list of movie objects"""
+    movies= []
 
+    for movie in movie_data:
+
+        movies.append(Movie(*movie))
+
+    return movies
+
+movies = create_movie_objects(movie_data)
+
+print(movies[5].title)
+print(movies[3].title)
+print(movies[0].title)
 
 # PROBLEM 03
 
