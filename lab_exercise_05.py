@@ -1,7 +1,6 @@
 # LAB EXERCISE 05
 import requests
 from bs4 import BeautifulSoup
-import string
 
 ### SET UP BEGINS Do not modify
 punctuations = ["—", "–", "-", ":"]
@@ -51,7 +50,7 @@ def scrape_study_abroad_countries():
 
     countries = []
 
-    punctuation = string.punctuation
+    punctuations = string.punctuation
 
     for title in soup.find_all("p"):
         text = title.get_text().strip()
@@ -63,7 +62,7 @@ def scrape_study_abroad_countries():
                 country = parts[1].strip()
 
                 country = country.split("(")[0].strip()
-                country = country.strip(punctuation).strip()
+                country = country.strip(punctuations).strip()
 
                 if country not in countries:
                     countries.append(country)
