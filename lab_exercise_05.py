@@ -41,7 +41,7 @@ def scrape_quotes_by_author(num_pages):
 
 
 # PROBLEM 02
-    def scrape_study_abroad_countries():
+def scrape_study_abroad_countries():
     """scrapes the Northeastern course catalog for unique study abroad countries."""
     url = "https://catalog.northeastern.edu/course-descriptions/abrd/"
 
