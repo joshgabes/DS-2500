@@ -41,7 +41,7 @@ def scrape_quotes_by_author(num_pages):
 
 
 # PROBLEM 02
-def scrape_study_abroad_countries():
+    def scrape_study_abroad_countries():
     """scrapes the Northeastern course catalog for unique study abroad countries."""
     url = "https://catalog.northeastern.edu/course-descriptions/abrd/"
 
@@ -50,22 +50,25 @@ def scrape_study_abroad_countries():
 
     countries = []
 
-    punctuations = string.punctuation
+    for title in soup.find_all(True):
+        text = title.get_text(" ", strip=True)
 
-    for title in soup.find_all("p"):
-        text = title.get_text().strip()
+        if "International Study" not in text:
+            continue
 
-        if "International Study" in text:
-            parts = text.split("—")
+        parts = text.split("International Study", 1)
+        if len(parts) < 2:
+            continue
 
-            if len(parts) > 1:
-                country = parts[1].strip()
+        country_text = parts[1].strip()
 
-                country = country.split("(")[0].strip()
-                country = country.strip(punctuations).strip()
+        for punctuation in punctuations:
+            country_text = country_text.strip().strip(punctuation).strip()
 
-                if country not in countries:
-                    countries.append(country)
+        country = country_text.split("(", 1)[0].strip().rstrip(".").strip()
+
+        if country and country not in countries:
+            countries.append(country)
 
     return countries
     
