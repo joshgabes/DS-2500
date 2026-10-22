@@ -1,6 +1,7 @@
 # LAB EXERCISE 05
 import requests
 from bs4 import BeautifulSoup
+import string
 
 ### SET UP BEGINS Do not modify
 punctuations = ["—", "–", "-", ":"]
