@@ -99,6 +99,8 @@ def get_weather_summary(cities):
     return weather_summary
 
 def main():
+    print(scrape_quotes_by_author(2))
+    print(scrape_study_abroad_countries())
     print(get_weather_summary(city_locations))
 
 if __name__ == '__main__':
