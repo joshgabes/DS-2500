@@ -99,7 +99,7 @@ def get_weather_summary(cities):
     return weather_summary
 
 def main():
-    pass
+    print(get_weather_summary(city_locations))
 
 if __name__ == '__main__':
     main()
