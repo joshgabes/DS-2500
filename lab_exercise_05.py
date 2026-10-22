@@ -73,6 +73,33 @@ def scrape_quotes_by_author(num_pages):
     return countries
     
 # PROBLEM 03
+def get_weather_summary(cities):
+    """Return current weather for each city, using NA if a request fails."""
+    weather_summary = {}
+
+    for city in cities:
+        try:
+            lat = city["latitude"]
+            lon = city["longitude"]
+            url = (f"https://api.open-meteo.com/v1/forecast?latitude={lat}"
+                   f"&longitude={lon}&current_weather=True")
+            response = requests.get(url)
+            response.raise_for_status()
+            weather = response.json()["current_weather"]
+
+            weather_summary[city["name"]] = {
+                "temperature": float(weather["temperature"]),
+                "windspeed": float(weather["windspeed"]),
+                "weathercode": int(weather["weathercode"])
+            }
+        except Exception:
+            weather_summary[city["name"]] = {
+                "temperature": "NA",
+                "windspeed": "NA",
+                "weathercode": "NA"
+            }
+
+    return weather_summary
 
 def main():
     pass
