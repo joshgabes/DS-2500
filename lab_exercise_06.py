@@ -46,6 +46,7 @@ def find_mode(numbers):
         if counts[number] == highest_count:
             modes.append(number)
     return modes
+    
 # PROBLEM 04
 def find_variance(numbers):
     """Return the population variance of a list of numbers."""
@@ -57,6 +58,31 @@ def find_variance(numbers):
 def find_sd(variance):
     """Return the standard deviation given a variance."""
     return variance ** 0.5
+
+# PROBLEM 05
+def print_stats(name, scores):
+    """Calculate and print summary statistics for one section's scores."""
+    mean = find_average(scores)
+    median = find_median(scores)
+    modes = find_mode(scores)
+    variance = find_variance(scores)
+    sd = find_sd(variance)
+
+    print(name)
+    print("Mean:", round(mean, 2))
+    print("Median:", round(median, 2))
+    if modes == scores:
+        print("Mode(s): No mode")
+    else:
+        print("Mode(s):", modes)
+    print("Population variance:", round(variance, 2))
+    print("Standard deviation:", round(sd, 2))
+    print()
+
+
+def main():
+    print_stats("Section A", section_A)
+    print_stats("Section B", section_B)
 
 def main():
     pass
