@@ -46,7 +46,17 @@ def find_mode(numbers):
         if counts[number] == highest_count:
             modes.append(number)
     return modes
+# PROBLEM 04
+def find_variance(numbers):
+    """Return the population variance of a list of numbers."""
+    n = len(numbers)
+    mean = sum(numbers) / n
+    return sum((x - mean) ** 2 for x in numbers) / n
 
+
+def find_sd(variance):
+    """Return the standard deviation given a variance."""
+    return variance ** 0.5
 
 def main():
     pass
