@@ -26,7 +26,7 @@ def find_median(numbers):
 
 # PROBLEM 03
 def find_mode(numbers):
-    """Return all modes in a list, or the original list if no mode exists."""
+    """Return one mode, a list of multiple modes, or the original list."""
     counts = {}
     for number in numbers:
         if number in counts:
@@ -38,13 +38,18 @@ def find_mode(numbers):
     for number in counts:
         if counts[number] > highest_count:
             highest_count = counts[number]
+
     if highest_count == 1:
         return numbers
-        
+
     modes = []
     for number in counts:
         if counts[number] == highest_count:
             modes.append(number)
+
+    if len(modes) == 1:
+        return modes[0]
+
     return modes
     
 # PROBLEM 04
