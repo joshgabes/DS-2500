@@ -29,9 +29,17 @@ def min_max_scaling(X_train, X_test=None):
     return X_train_scaled.tolist() + X_test_scaled.tolist()  
 
 # PROBLEM 1
-
+def perform_kmeans(X, n_clusters):
+    """Run K-Means clustering (random_state=2500) and return the cluster labels as a list."""
+    kmeans = KMeans(n_clusters=n_clusters, random_state=2500)
+    kmeans.fit(X)
+    return kmeans.labels_.tolist()
 # PROBLEM 2
-
+def perform_hierarchical(X, n_clusters):
+    """Run agglomerative clustering with average linkage and return the cluster labels as a list."""
+    hierarchical = AgglomerativeClustering(n_clusters=n_clusters, linkage='average')
+    hierarchical.fit(X)
+    return hierarchical.labels_.tolist()
 # PROBLEM 3
 
 # PROBLEM 4
@@ -39,6 +47,11 @@ def min_max_scaling(X_train, X_test=None):
 def main():
     data = load_iris()
     X = data.data.tolist()
+         kmeans_labels = perform_kmeans(X, n_clusters=3)
+    print(kmeans_labels)
+
+    hierarchical_labels = perform_hierarchical(X, n_clusters=3)
+    print(hierarchical_labels)
     
 if __name__ == '__main__':
     main()
