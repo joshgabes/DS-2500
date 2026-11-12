@@ -41,9 +41,36 @@ def perform_hierarchical(X, n_clusters):
     hierarchical.fit(X)
     return hierarchical.labels_.tolist()
 # PROBLEM 3
+def find_optimal_clusters(X, clustering_option="kmeans", max_k=10):
+    """Find the number of clusters with the highest silhouette score."""
+    best_score = -1
+    best_k = 2
 
+    for k in range(2, max_k + 1):
+        if clustering_option == "kmeans":
+            cluster_labels = perform_kmeans(X, k)
+        else:
+            cluster_labels = perform_hierarchical(X, k)
+
+        score = silhouette_score(X, cluster_labels)
+        score = float(score)
+
+        print(f"Silhouette Score: {score:.3f}")
+
+        if score > best_score:
+            best_score = score
+            best_k = k
+
+    return best_k
 # PROBLEM 4
+def save_clustering_results(labels, filename):
+    """Save cluster labels to a CSV file."""
+    with open(filename, "w") as file:
+        file.write("cluster_label\n")
 
+        for label in labels:
+            file.write(str(label) + "\n")
+            
 def main():
     data = load_iris()
     X = data.data.tolist()
