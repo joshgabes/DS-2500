@@ -47,7 +47,7 @@ def perform_hierarchical(X, n_clusters):
 def main():
     data = load_iris()
     X = data.data.tolist()
-         kmeans_labels = perform_kmeans(X, n_clusters=3)
+    kmeans_labels = perform_kmeans(X, n_clusters=3)
     print(kmeans_labels)
 
     hierarchical_labels = perform_hierarchical(X, n_clusters=3)
