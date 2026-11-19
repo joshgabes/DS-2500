@@ -14,3 +14,10 @@ data = {
 }
 df = pd.DataFrame(data)
 
+#Problem 4 Zach
+def evaluate_model(model, X: pd.DataFrame, y: pd.Series) -> float:
+    """Evaluate a trained linear regression model on a dataset. Parameters: model: A trained linear regression model (e.g., sklearn LinearRegression). X (pd.DataFrame): Feature data. y (pd.Series): True labels. Returns: float: Mean Squared Error between the model's predictions and y."""
+    predictions = model.predict(X)
+    mse = mean_squared_error(y, predictions)
+    return float(mse)
+
