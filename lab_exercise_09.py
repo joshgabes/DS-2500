@@ -14,6 +14,36 @@ data = {
 }
 df = pd.DataFrame(data)
 
+# PRoblem 1 Josh
+def split_data(data):
+    """Split a DataFrame into train (64%), validation (16%), and test (20%)
+    feature and label sets, using Stress_level as the label."""
+    X = data.drop(columns=['Stress_level'])
+    y = data['Stress_level']
+
+    # 80/20 split: temp vs. test
+    X_temp, X_test, y_temp, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=2500)
+
+    # 80/20 split of temp: training vs. validation
+    X_train, X_val, y_train, y_val = train_test_split(
+        X_temp, y_temp, test_size=0.2, random_state=2500)
+
+    return X_train, X_val, X_test, y_train, y_val, y_test
+
+
+def main():
+    print("Problem 1: Splitting Data")
+    X_train, X_val, X_test, y_train, y_val, y_test = split_data(df)
+    print(f"Training set: {len(X_train)} samples")
+    print(f"Validation set: {len(X_val)} samples")
+    print(f"Test set: {len(X_test)} samples")
+    print(f"Feature columns: {X_train.columns.tolist()}")
+
+
+if __name__ == "__main__":
+    main()
+
 #Problem 4 Zach
 def evaluate_model(model, X: pd.DataFrame, y: pd.Series) -> float:
     """Evaluate a trained linear regression model on a dataset. Parameters: model: A trained linear regression model (e.g., sklearn LinearRegression). X (pd.DataFrame): Feature data. y (pd.Series): True labels. Returns: float: Mean Squared Error between the model's predictions and y."""
