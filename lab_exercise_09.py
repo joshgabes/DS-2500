@@ -44,6 +44,21 @@ def main():
 if __name__ == "__main__":
     main()
 
+#Problem 2
+def feature_selection(train_features, val_features, test_features, selected_columns):
+    """Select specific columns from the training, validation, and test sets."""
+
+    train_features = train_features[selected_columns]
+    val_features = val_features[selected_columns]
+    test_features = test_features[selected_columns]
+
+    return train_features, val_features, test_features
+def main():
+    print("Problem 2: Feature Selection (both features)")
+    X_train_sel, X_val_sel, X_test_sel = feature_selection(X_train, X_val,
+    X_test, ['Hours_worked', 'Coffee_intake'])
+    print(f"Selected features: {X_train_sel.columns.tolist()}")
+
 #Problem 4 Zach
 def evaluate_model(model, X: pd.DataFrame, y: pd.Series) -> float:
     """Evaluate a trained linear regression model on a dataset. Parameters: model: A trained linear regression model (e.g., sklearn LinearRegression). X (pd.DataFrame): Feature data. y (pd.Series): True labels. Returns: float: Mean Squared Error between the model's predictions and y."""
