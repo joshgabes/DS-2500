@@ -59,6 +59,13 @@ def main():
     X_test, ['Hours_worked', 'Coffee_intake'])
     print(f"Selected features: {X_train_sel.columns.tolist()}")
 
+# Problem 3
+def train_model(X_train: pd.DataFrame, y_train: pd.Series):
+    """Train and return a linear regression model using the training data."""
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+    return model
+
 #Problem 4 Zach
 def evaluate_model(model, X: pd.DataFrame, y: pd.Series) -> float:
     """Evaluate a trained linear regression model on a dataset. Parameters: model: A trained linear regression model (e.g., sklearn LinearRegression). X (pd.DataFrame): Feature data. y (pd.Series): True labels. Returns: float: Mean Squared Error between the model's predictions and y."""
